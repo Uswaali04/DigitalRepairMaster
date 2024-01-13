@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "repairs",
+  "info": {
+    "singularName": "repair",
+    "pluralName": "repairs",
+    "displayName": "Repair",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "device": {
+      "type": "string",
+      "required": true
+    },
+    "detail": {
+      "type": "string",
+      "required": true
+    },
+    "budget": {
+      "required": true,
+      "type": "biginteger"
+    },
+    "address": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "detail"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "repairs"
+    },
+    "offers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::offer.offer",
+      "mappedBy": "repair"
+    },
+    "isDone": {
+      "type": "string"
+    },
+    "phone_no": {
+      "type": "string",
+      "minLength": 11,
+      "maxLength": 11
+    }
+  }
+}

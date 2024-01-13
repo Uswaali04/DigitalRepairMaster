@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "offers",
+  "info": {
+    "singularName": "offer",
+    "pluralName": "offers",
+    "displayName": "Offer",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "response": {
+      "type": "richtext"
+    },
+    "repair": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::repair.repair",
+      "inversedBy": "offers"
+    },
+    "required_time": {
+      "type": "string"
+    },
+    "delivery_charges": {
+      "type": "biginteger"
+    },
+    "profile": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::profile.profile",
+      "inversedBy": "offers"
+    },
+    "offered_budget": {
+      "type": "string"
+    }
+  }
+}

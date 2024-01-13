@@ -1,0 +1,61 @@
+{
+  "kind": "collectionType",
+  "collectionName": "profiles",
+  "info": {
+    "singularName": "profile",
+    "pluralName": "profiles",
+    "displayName": "Profile",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "shop_name": {
+      "type": "string",
+      "required": true,
+      "minLength": 3
+    },
+    "shop_email": {
+      "type": "email",
+      "required": true,
+      "unique": true
+    },
+    "shop_about": {
+      "type": "string"
+    },
+    "shop_address": {
+      "type": "string"
+    },
+    "offers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::offer.offer",
+      "mappedBy": "profile"
+    },
+    "shop_contactinfo": {
+      "type": "string"
+    },
+    "shop_cnic": {
+      "type": "string",
+      "minLength": 13
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "profile"
+    },
+    "reviews": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::review.review",
+      "mappedBy": "profile"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "shop_name"
+    }
+  }
+}
