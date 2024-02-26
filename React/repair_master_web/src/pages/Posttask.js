@@ -73,7 +73,7 @@ export default function Posttask() {
                         message: 'Device name should be at least 3 characters',
                       },
                       maxLength: {
-                        value: 15,
+                        value: 150,
                         message: "Device name can't be longer than 15 characters",
                       },
                     })}
@@ -114,14 +114,14 @@ export default function Posttask() {
                         value: true,
                         message: 'Kindly enter your Phone no.',
                       },
-                      minLength: {
-                        value: 11,
-                        message: 'Phone no. should be 11 digits long.',
-                      },
-                      maxLength: {
-                        value: 11,
-                        message: "Phone no. can not be longer than 11 digits.",
-                      },
+                      // minLength: {
+                      //   value: 11,
+                      //   message: 'Phone no. should be 11 digits long.',
+                      // },
+                      // maxLength: {
+                      //   value: 11,
+                      //   message: "Phone no. can not be longer than 11 digits.",
+                      // },
                     })}
                     className={errors.phone_no ? 'is-invalid form-control' : 'form-control'}
                     id="exampleFormControlTextarea1"

@@ -36,7 +36,7 @@ export default function MakeAnOffer() {
             }
             
             alert('Submision successful');
-            navigate('/details')
+            navigate('/details/:slug')
             reset();
         } catch (error) {
             console.log(`error ${error}`);

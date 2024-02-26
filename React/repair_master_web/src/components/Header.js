@@ -119,17 +119,17 @@ function Header() {
                       </Link>
                     </li>
                     <li className="nav-item">
-                      <Link className="nav-link" to="/check-shops">
-                        Check Shops
-                      </Link>
-                    </li>
-                    <li className="nav-item">
                       <Link className="nav-link" onClick={Logout} to="/">
                         Logout
                       </Link>
                     </li>
                   </>
                 )}
+                <li className="nav-item">
+                  <Link className="nav-link" to="/check-shops">
+                    Check Shops
+                  </Link>
+                </li>
                 <li className="nav-item">
                   <Link className="nav-link" to="/about-us">
                     About us

@@ -33,9 +33,9 @@ export default function PostedTask() {
         const username = localStorage.getItem('userid')
         setLoading(true)
         let apiEnd = 'http://localhost:1337/api/repairs?populate=*'
-        if (username) {
-            apiEnd = `http://localhost:1337/api/repairs?populate=*&filters[users_permissions_user][id][$eq]=${username}`
-        }
+        // if (username) {
+        //     apiEnd = `http://localhost:1337/api/repairs?populate=*&filters[users_permissions_user][id][$eq]=${username}`
+        // }
         let response = await fetch(apiEnd)
         let earnResponse = await response.json()
         setEarn(earnResponse.data)

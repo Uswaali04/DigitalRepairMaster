@@ -30,7 +30,7 @@ export default function ViewProfile() {
 
     let [editProfile, setEditProfile] = useState([])
     let [loading, setLoading] = useState(false)
-    let profileId = localStorage.getItem('profileId')
+    let profileId = localStorage.getItem('profile_Id')
     async function fetchProfile() {
         setLoading(true)
         let apiEnd = `http://localhost:1337/api/profiles?populate=*&filters[id][$eq]=${profileId}`
