@@ -3,7 +3,7 @@ function Header() {
 
   const token = localStorage.getItem('token');
   const user_type = localStorage.getItem('user_type')
-  const profileId = localStorage.getItem('profileId')
+  const profileId = localStorage.getItem('profile_Id')
   const navigate = useNavigate()
   const Logout = () => {
     localStorage.removeItem("token")
@@ -31,6 +31,17 @@ function Header() {
               <ul className="navbar-nav me-auto mb-2 mb-md-0">
                 <li className="nav-item">
                   <Link className="nav-link" aria-current="page" to="/">Home</Link>
+
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/check-shops">
+                    Check Shops
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/about-us">
+                    About us
+                  </Link>
                 </li>
                 {!profileId && token && user_type === 'as_a_shop/lab_owner' && (
                   <>
@@ -70,6 +81,11 @@ function Header() {
                         Logout
                       </Link>
                     </li>
+                    <li className="nav-item">
+                      <Link className="nav-link" to="/your-offers">
+                        Your Offers
+                      </Link>
+                    </li>
                   </>
                 )
 
@@ -82,30 +98,7 @@ function Header() {
                     </Link>
                   </li>
                 )}
-                {token && user_type === 'as_a_shop/lab_owner' && profileId && (
-                  <>
-                    <li className="nav-item">
-                      <Link className="nav-link" to="/earn-money">
-                        Earn Money
-                      </Link>
-                    </li>
-                    <li className="nav-item">
-                      <Link className="nav-link" to="/edit-profile">
-                        Profile
-                      </Link>
-                    </li>
-                    <li className="nav-item">
-                      <Link className="nav-link" to="/your-offers">
-                        Your Offers
-                      </Link>
-                    </li>
-                    <li className="nav-item">
-                      <Link className="nav-link" onClick={Logout} to="/">
-                        Logout
-                      </Link>
-                    </li>
-                  </>
-                )}
+               
                 {token && user_type === 'as_a_client' && (
                   <>
                     <li className="nav-item">
@@ -125,17 +118,9 @@ function Header() {
                     </li>
                   </>
                 )}
-                <li className="nav-item">
-                  <Link className="nav-link" to="/check-shops">
-                    Check Shops
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/about-us">
-                    About us
-                  </Link>
-                </li>
+               
               </ul>
+              
             </div>
           </div>
         </nav>

@@ -10,7 +10,7 @@ export default function Reviews() {
     const onSubmit = async (data) => {
         let copyData = {
             ...data,
-            profile : localStorage.getItem('profileId'),
+            profile : localStorage.getItem('profile_Id'),
             users_permissions_user: localStorage.getItem('userid')
         }
         try {
@@ -39,7 +39,7 @@ export default function Reviews() {
 
             <section className="form-box col-md-12 my-4" style={{ maxWidth: "960px" }}>
 
-                <div className="form" >
+                <div className="form-container" >
                     <div className=" mb-3" >
                         <label htmlFor="exampleFormControlTextarea1" className="form-label fw-bold subtitle text-color" >Please give us your Feedback</label>
                         <textarea className="form-control" placeholder="let us know your experience with this Repair Master."

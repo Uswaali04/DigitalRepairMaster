@@ -15,7 +15,7 @@ async function handleDelete(profileId) {
             // Perform any necessary state updates or UI changes
             alert('Delete successful');
             window.location.reload()
-            localStorage.removeItem('profileId');
+            localStorage.removeItem('profile_Id');
         } else {
             // Handle error if deletion was unsuccessful
             alert('Some error occurred while deleting');
@@ -26,7 +26,7 @@ async function handleDelete(profileId) {
     }
 }
 
-export default function ViewProfile() {
+export default function EditProfile() {
 
     let [editProfile, setEditProfile] = useState([])
     let [loading, setLoading] = useState(false)
@@ -98,7 +98,6 @@ export default function ViewProfile() {
                                         </div>
                                         <div className='d-flex justify-content-center my-1'>
                                             <button className="nav-link py-2 col-3 text-center" onClick={() => handleDelete(profileItem.id)}>Delete</button>
-
                                         </div>
                                     </div>
                                 </div>

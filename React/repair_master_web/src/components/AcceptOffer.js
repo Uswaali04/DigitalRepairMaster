@@ -14,7 +14,7 @@ export default function AcceptOffer() {
         let offerResponse = await response.json()
         setOffer(offerResponse.data)
         setLoading(false)
-        localStorage.setItem('profileId', offerResponse.data[0].attributes.profile.data.id)
+        localStorage.setItem('profile_Id', offerResponse.data[0].attributes.profile.data.id)
     }
     useEffect(() => { fetchOffer() }, [])
     if (loading)

@@ -18,7 +18,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ViewProfile from './pages/ViewProfile';
 import YourOffers from './pages/YourOffers';
 import CheckShops from './pages/CheckShops';
-import CheckShopsDetails from './pages/CheckShopsDetails';
+
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -36,7 +36,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                 <Route path='/view-profile' element={<ViewProfile/>} />
                 <Route path="/details/:slug" element={<EarnMoneyDetails />} />
                 <Route path='/check-shops' element={<CheckShops/>}/>
-                <Route path="/check-shops-details/:slug" element={<CheckShopsDetails/>}/>
                 <Route path='/your-offers' element={<YourOffers/>}/>
                 <Route path="/about-us" element={<AboutUs />} />
                 <Route path="/posted-by-you" element={<PostedTask />} />

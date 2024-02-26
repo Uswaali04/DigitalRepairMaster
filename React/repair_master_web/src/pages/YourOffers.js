@@ -23,7 +23,7 @@ async function handleDelete(repairId) {
 export default function YourOffers() {
     const [offer, setOffer] = useState([])
     let [loading, setLoading] = useState(false)
-    let profileId = localStorage.getItem('profileId')
+    let profileId = localStorage.getItem('profile_Id')
     async function fetchOffer() {
         setLoading(true)
         let apiEnd = `http://localhost:1337/api/offers?populate=*&filters[profile][id][$eq]=${profileId}`

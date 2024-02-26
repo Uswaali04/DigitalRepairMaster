@@ -33,7 +33,7 @@ export default function Profile() {
         setError(response.error);
         throw new Error(response.error);
       }
-      localStorage.setItem("profileId", userResponse.data[0]?.id)
+      localStorage.setItem("profile_Id", userResponse.data[0]?.id)
       alert('Submision successful');
       navigate('/')
     } catch (error) {

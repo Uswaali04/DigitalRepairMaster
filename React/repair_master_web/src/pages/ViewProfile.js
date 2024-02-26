@@ -3,10 +3,34 @@ import { useState } from 'react';
 import Placeholder from '../placeholders/Placeholder';
 import Reviews from '../components/Reviews';
 import GetReviews from '../components/GetReviews';
+import { Link } from 'react-router-dom';
+
+async function handleDelete(profileId) {
+    try {
+        const requestOptions = {
+            method: 'DELETE',
+            headers: { 'Content-Type': 'application/json' }
+        };
+        const response = await fetch(`http://localhost:1337/api/profiles/${profileId}`, requestOptions);
+        if (response.ok) {
+            // Task deleted successfully
+            // Perform any necessary state updates or UI changes
+            alert('Delete successful');
+            window.location.reload()
+            localStorage.removeItem('profile_Id');
+        } else {
+            // Handle error if deletion was unsuccessful
+            alert('Some error occurred while deleting');
+        }
+    } catch (error) {
+        console.error('Error deleting task:', error);
+        // Handle error and display an error message if needed
+    }
+}
 
 
 export default function ViewProfile() {
-    
+
     let [editProfile, setEditProfile] = useState([])
     let [loading, setLoading] = useState(false)
     let profileId = localStorage.getItem('profileId')
@@ -20,7 +44,7 @@ export default function ViewProfile() {
     }
     useEffect(() => { fetchProfile() }, [])
     if (loading) {
-       return <Placeholder />
+        return <Placeholder />
     }
 
     return (
@@ -28,9 +52,9 @@ export default function ViewProfile() {
             {
                 editProfile.map(profileItem => (
                     <div key={profileItem.id}>
-                        <form className="container d-flex mt-3" >
-                            <section className="form-box col-lg-12" style={{ maxWidth: "1000px" }}>
-                                <div className="row form">
+                        <form className="container d-flex mt-5" >
+                            <section className="form-box" >
+                                <div className="form">
                                     <div className="card py-1">
                                         <div className='row'>
                                             <div className="card-header-menu">
@@ -38,8 +62,8 @@ export default function ViewProfile() {
                                             </div>
                                         </div>
                                         <div className="form-container col-lg-12 text-start">
-                                            <div className="row g-2">
-                                                <div className="col-lg-6 ps-3">
+                                            <div className="row">
+                                                <div className="col-lg-5">
                                                     <div className="flex-column d-flex">
                                                         <div className="form-group my-1">
                                                             <label htmlFor="formGroupExampleInput" className="fw-bold subtitle">Shop/Lab Name:</label>
@@ -56,7 +80,7 @@ export default function ViewProfile() {
                                                     </div>
                                                 </div>
 
-                                                <div className="col-lg-6 ps-3">
+                                                <div className="col-lg-6">
                                                     <div className="flex-column d-flex">
                                                         <div className="form-group my-1">
                                                             <label htmlFor="shop_contactinfo" className="fw-bold subtitle">Phone:</label>
@@ -77,14 +101,19 @@ export default function ViewProfile() {
                                         </div>
                                     </div>
                                 </div>
+                                
+                                <div className='d-flex justify-content-center mb-3'>
+                                    <button className="nav-link py-2 col-3 text-center" onClick={() => handleDelete(profileItem.id)}>Delete</button>
+                                </div>
                             </section>
+
                         </form>
-                        <GetReviews/>
-                        <Reviews/>
+
+
                     </div>
                 )
                 )}
-            
+            <GetReviews />
         </div>
     )
 }
