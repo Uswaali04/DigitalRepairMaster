@@ -140,6 +140,8 @@ body {
   display: flex;
   flex-direction: column;
   padding: 12px 12px;
+  margin-left: 1px;
+  margin-right: 1px;
   gap: 16px;
   text-align: left;
 }

@@ -46,7 +46,7 @@ export default function Profile() {
       <Header />
       {error && JSON.stringify(error)}
       <form className="container d-flex mt-3" onSubmit={handleSubmit(onSubmit)}>
-        <section className="form-box col-lg-12" style={{ maxWidth: "1000px" }}>
+        <section className="form-box col-lg-12" style={{ maxWidth: "1200px" }}>
           <div className="row form">
             <div className="card py-1">
               <div className='row'>

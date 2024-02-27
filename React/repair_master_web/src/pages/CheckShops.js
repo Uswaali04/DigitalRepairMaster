@@ -4,6 +4,7 @@ import Placeholder from '../placeholders/Placeholder';
 import GetReviews from '../components/GetReviews';
 import Reviews from '../components/Reviews';
 import { Link } from 'react-router-dom';
+import ReviewsforCHeckShops from './ReviewsforCHeckShops';
 
 
 export default function CheckShops() {
@@ -26,13 +27,13 @@ export default function CheckShops() {
 
     return (
         <div>
-            <div className="mt-3 ms-3 d-flex">
+            <div className="mt-3 row d-flex">
 
                 {
                     editProfile && editProfile.map(profileItem => (
 
                         <form className="mt-3" key={profileItem.id}>
-                            <section className="form-box" style={{ maxWidth: "1200px", overflow: "hidden" }}>
+                            <section className="form-box" style={{ maxWidth: "1200px" , flexShrink: "0"}}>
                                 <div className=" form">
                                     <div className="card py-1">
                                         <div className="form-container text-start">
@@ -70,14 +71,15 @@ export default function CheckShops() {
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div className='col-lg-4'><GetReviews /></div>
-
+                                                {/* <div className='col-lg-4'><ReviewsforCHeckShops /></div> */}
+                                                <div className='row'><GetReviews /></div>
+                                                
                                             </div>
                                         </div>
-                                        <Reviews/>
+
                                     </div>
                                 </div>
-                               
+
                             </section>
                         </form>
                     )

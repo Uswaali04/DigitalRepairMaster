@@ -18,13 +18,13 @@ export default function GetReviews() {
         return <Placeholder />
     return (
         <div>
-            <div className="row d-flex py-1 mt-2 color" style={{ flexDirection: "row", width: "100%" }}>
+            <div className="row d-flex py-1 mt-2 color" style={{ flexDirection: "row", width: "100%",height:"auto", background: "pink", flexGrow: "auto"}}>
                 <label className='fw-bold title mb-2'>Reviews</label>
 
                 {
                     earn.map(earnItem => (
                         <div className='col-lg-12 col-md-8' key={earnItem.id}>
-                            <div className="card form-box mt-2 ms-2" >
+                            <div className="card form-box mt-2 ms-2">
                                 <div className="card-body form-container">
                                     <div className='row'>
                                         <div className='col'><p className='fw-semibold form-section'>From: {earnItem.attributes?.users_permissions_user?.data?.attributes?.username}</p></div>

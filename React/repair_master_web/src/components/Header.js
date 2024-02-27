@@ -20,8 +20,8 @@ function Header() {
   return (
     <div>
       <header>
-        <nav className="navbar navbar-expand-md fixed-top">
-          <div className="container-fluid">
+        <nav className="navbar navbar-expand-md fixed-top" >
+          <div className="container-fluid" >
             <Link className="navbar-brand" to="/">Repair Master</Link>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
               aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,15 +34,16 @@ function Header() {
 
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/check-shops">
-                    Check Shops
-                  </Link>
-                </li>
-                <li className="nav-item">
                   <Link className="nav-link" to="/about-us">
                     About us
                   </Link>
                 </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/check-shops">
+                    Check Shops
+                  </Link>
+                </li>
+
                 {!profileId && token && user_type === 'as_a_shop/lab_owner' && (
                   <>
                     <li className="nav-item">
@@ -77,15 +78,16 @@ function Header() {
                       </Link>
                     </li>
                     <li className="nav-item">
-                      <Link className="nav-link" onClick={Logout} to="/">
-                        Logout
-                      </Link>
-                    </li>
-                    <li className="nav-item">
                       <Link className="nav-link" to="/your-offers">
                         Your Offers
                       </Link>
                     </li>
+                    <li className="nav-item">
+                      <Link className="nav-link" onClick={Logout} to="/">
+                        Logout
+                      </Link>
+                    </li>
+
                   </>
                 )
 
@@ -98,7 +100,7 @@ function Header() {
                     </Link>
                   </li>
                 )}
-               
+
                 {token && user_type === 'as_a_client' && (
                   <>
                     <li className="nav-item">
@@ -118,9 +120,9 @@ function Header() {
                     </li>
                   </>
                 )}
-               
+
               </ul>
-              
+
             </div>
           </div>
         </nav>
